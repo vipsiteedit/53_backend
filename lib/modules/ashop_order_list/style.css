@@ -1,0 +1,454 @@
+﻿.aPayee {
+   padding-bottom: 30px;
+}
+.ashop_order_list .btn-default,
+.ashop_order_list .buttonSend,
+.ashop_order_list button,
+.ashop_order_list input[type=button],
+.ashop_order_list input[type=reset],
+.ashop_order_list input[type=submit] {
+	background-color: #313131;
+	border-radius: 0.3125rem;
+	color: #fff;
+	font-weight: bold;
+	display: inline-block;
+	margin-bottom: 0;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	border: none;
+	white-space: nowrap;
+	padding: 0.78em 2.25em;
+	font-size: 1.125rem;
+	line-height: 1.42857143;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none
+}
+
+
+.ashop_order_list .payment_status {
+	color: #8BC34A
+}
+
+.ashop_order_list {
+	padding: 10px 0;
+}
+
+.clearfix {
+	clear: both;
+}
+
+.ashop_order_list #cabinet-tabs .tab-content {
+	border-top: 0;
+	font-size: 12px;
+	display: none
+}
+
+.ashop_order_list #cabinet-tabs .cabinet-tab table {
+	width: 100%
+}
+
+.ashop_order_list #cabinet-tabs .cabinet-tab .ordertr {
+	width: 100%;
+	font-size: 0;
+	border-left: 1px solid #e9e9e9;
+	border-right: 1px solid #e9e9e9;
+	border-top: 1px solid #e9e9e9
+}
+
+.ashop_order_list .cabinet-tab-header .ordertr {
+	width: 100%;
+	font-size: 0;
+	border-left: 1px solid #e9e9e9;
+	border-right: 1px solid #e9e9e9;
+	border-top: 1px solid #e9e9e9
+}
+
+.ashop_order_list .cabinet-tab-header .ordertr {
+	width: 100%;
+	font-size: 0
+}
+
+.ashop_order_list .cabinet-tab-header .ordertd {
+	padding: 15px 15px;
+	text-align: left;
+	width: 20%;
+	display: inline-block;
+	box-sizing: border-box;
+	font-size: 14px;
+	text-align: center;
+	font-weight: 700
+}
+
+.ashop_order_list.order_page .cabinet-tab-header .ordertd {
+	width: 16.666%;
+	vertical-align: middle
+}
+
+.ashop_order_list #cabinet-tabs {
+	border-bottom: 1px solid #e9e9e9
+}
+
+.ashop_order_list #cabinet-tabs .cabinet-tab .ordertd {
+	padding: 15px 15px;
+	text-align: left;
+	width: 20%;
+	display: inline-block;
+	box-sizing: border-box;
+	font-size: 14px;
+	text-align: center
+}
+
+.ashop_order_list.order_page #cabinet-tabs .cabinet-tab .ordertd {
+	width: 16.666%;
+	vertical-align: middle
+}
+
+.ashop_order_list #cabinet-tabs .cabinet-tab .ordertd .btn {
+}
+
+.ashop_order_list #cabinet-tabs table td {
+	padding: 15px 15px;
+	text-align: left;
+	border-bottom: 1px solid #F8F8F8
+}
+
+.ashop_order_list .paySelect {
+	font-size: 0;
+	border-left: 1px solid #e9e9e9;
+	border-right: 1px solid #e9e9e9
+}
+
+.ashop_order_list .paySelect .obj {
+	width: 16.666%;
+	text-align: center;
+	padding: 20px 10px;
+	position: relative;
+	display: inline-block
+}
+
+.ashop_order_list .paySelect .obj:hover .objectNote {
+	display: block
+}
+
+.ashop_order_list .paySelect .obj .objectNote {
+	border: 1px solid #e9e9e9;
+	padding: 10px;
+	position: absolute;
+	width: 100%;
+	background: #fff;
+	z-index: 1;
+	margin: 10px 0 0 0;
+	display: none;
+	font-size: 11px
+}
+
+.ashop_order_list .objectImageArea {
+	display: block;
+	cursor: pointer
+}
+
+.ashop_order_list .tab-link {
+	float: right;
+	display: inline-block;
+	padding: 5px 0 0 0;
+	text-align: right
+}
+
+.ashop_order_list .tab-link a {
+	display: block
+}
+
+.ashop_order_list .ordertd div {
+	display: none;
+	padding: 15px 0 15px 0;
+	font-weight: 600
+}
+
+.ashop_order_list .ashop-header-text {
+	font-size: 16px;
+	font-weight: 600;
+	width: 100%;
+	padding: 30px 0 15px;
+	text-align: left
+}
+
+.ashop_order_list .paySelect .ashop-header-text {
+	padding: 10px 20px
+}
+
+.ashop_order_list .order-summ {
+	font-weight: 400
+}
+
+.ashop_order_list .result-orderpage {
+	float: right;
+	padding: 10px 0;
+}
+
+.ashop_order_list .result-orderpage div {
+	padding: 0;
+	text-align: right;
+}
+
+.ashop_order_list .result-orderpage div:first-child {
+	margin: 0 0 10px 0;
+	padding: 0;
+}
+
+.ashop_order_list .navigation-orderpage {
+	float: left;
+	padding: 14px 0;
+}
+
+.ashop_order_list .block-delivery-info,
+.ashop_order_list .block-paid-info {
+	font-size: 0;
+	border-bottom: 1px solid #e9e9e9;
+	width: 49%;
+	float: left;
+}
+
+.ashop_order_list .block-delivery-info {
+	margin: 0 2% 0 0;
+}
+
+.ashop_order_list .title-delivery,
+.ashop_order_list .title-paid {
+	font-size: 14px;
+}
+
+.ashop_order_list .block-delivery-info .ordertd,
+.ashop_order_list .block-paid-info .ordertd {
+	display: inline-block;
+	width: 50%;
+	font-size: 14px;
+	padding: 5px 15px;
+	vertical-align: middle;
+}
+
+.ashop_order_list .block-delivery-info .ordertd:first-child,
+.ashop_order_list .block-paid-info .ordertd:first-child {
+	font-weight: 600;
+}
+
+.ashop_order_list .ordertr {
+	border-left: 1px solid #e9e9e9;
+	border-right: 1px solid #e9e9e9;
+	border-top: 1px solid #e9e9e9;
+}
+
+.ashop_order_list .ordertr {
+	border-left: 1px solid #e9e9e9;
+	border-right: 1px solid #e9e9e9;
+	border-top: 1px solid #e9e9e9;
+}
+
+@media (max-width:991px) {
+	.ashop_order_list .ordertd .btn-default {
+		width: 100%;
+		padding: 10px 0
+	}
+
+	.ashop_order_list .paySelect .obj {
+		width: 33.333%;
+		margin-bottom: 30px
+	}
+
+}
+
+@media (max-width:767px) {
+	.ashop_order_list .ashop-header-text {
+		text-align: left;
+	}
+
+	.ashop_order_list #cabinet-tabs .cabinet-tab .ordertd {
+		width: 100%;
+		border: none;
+		padding: 0;
+		text-align: left;
+		font-size: 12px
+	}
+
+	.ashop_order_list .block-delivery-info,
+	.ashop_order_list .block-paid-info {
+		width: 100%;
+		float: none;
+	}
+
+	.ashop_order_list .block-delivery-info {
+		margin: 0;
+	}
+
+	.ashop_order_list .block-delivery-info .ordertd,
+	.ashop_order_list .block-paid-info .ordertd {
+		font-size: 12px;
+	}
+
+	.ashop_order_list.order_page #cabinet-tabs .cabinet-tab .ordertd {
+		width: 100%;
+		vertical-align: middle
+	}
+
+	.ashop_order_list #cabinet-tabs .cabinet-tab .ordertr {
+		padding: 15px
+	}
+
+	.ashop_order_list .pay-order-btn {
+		margin: 10px 0 0 0
+	}
+
+	.ashop_order_list .cabinet-tab-header {
+		display: none
+	}
+
+	.ashop_order_list .ordertd div {
+		display: block;
+		padding: 5px 0;
+		float: left;
+		width: 50%;
+	}
+
+	.ashop_order_list .ordertd {
+		overflow: hidden
+	}
+
+	.ashop_order_list .ordertd a,
+	.ashop_order_list .ordertd span {
+		display: block;
+		padding: 5px 0;
+		float: left;
+		width: 50%;
+	}
+
+	.ashop_order_list .paySelect .obj {
+		width: 50%;
+		margin-bottom: 30px;
+	}
+
+	.ashop_order_list .loginblock .form_title {
+		font-size: 1.2em;
+	}
+
+	.ashop_order_list .logoutblock .links {
+		display: block;
+		margin-bottom: 15px
+	}
+
+	.ashop_order_list .logoutblock .lnkout {
+		font-size: 14px;
+	}
+
+	.ashop_order_list .logoutblock #cabinet-tabs .cabinet-tab {
+		border-bottom: none;
+	}
+
+	.ashop_order_list .logoutblock #cabinet-tabs .cabinet-tab:last-child {
+		border-bottom: 1px solid #e9e9e9
+	}
+
+	.ashop_order_list .result-orderpage {
+		float: none;
+		width: 100%;
+	}
+
+	.ashop_order_list .result-orderpage div {
+		text-align: center;
+	}
+
+	.ashop_order_list .navigation-orderpage {
+		float: none;
+		width: 100%;
+		text-align: center;
+	}
+
+	.ashop_order_list .result-orderpage {
+		overflow: hidden;
+	}
+
+	.ashop_order_list .result-orderpage div:first-child {
+		float: left !important;
+		width: 50%;
+	}
+
+	.ashop_order_list .result-orderpage div:last-child {
+		float: right !important;
+		width: 50%;
+	}
+
+}
+
+@media (max-width:520px) {
+	.ashop_order_list .payment .paySelect .obj {
+		width: 100%;
+	}
+
+}
+
+@media (max-width:480px) {
+	.ashop_order_list .tab-link {
+		width: 100%;
+		float: none;
+		text-align: center;
+		margin: 20px 0;
+	}
+
+	.ashop_order_list .paySelect .obj {
+		width: 100%;
+		margin-bottom: 30px;
+	}
+
+	.ashop_order_list .loginblock .links.remem {
+		margin-top: 10px;
+		margin-bottom: 15px;
+		float: none;
+	}
+
+	.ashop_order_list .loginblock .loginsend {
+		width: 100%;
+	}
+
+	.ashop_order_list .loginblock .form_title {
+		font-size: 1.1em;
+	}
+
+	.ashop_order_list .loginblock .separate {
+		display: none;
+	}
+
+	.ashop_order_list .loginblock .links.regi {
+		font-size: 0.8em;
+		float: right;
+		margin-top: 0.7em;
+	}
+
+	.ashop_order_list .loginblock .login_form {
+		max-width: 100%;
+	}
+
+	.ashop_order_list.sub2 .delbut {
+		width: 100%;
+	}
+
+	.ashop_order_list.sub1 .mailboxsubm {
+		width: 100%;
+	}
+
+	.ashop_order_list .subDetailOrder .buttonSend {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	.ashop_order_list .result-orderpage div:first-child {
+		float: none !important;
+		width: 100%;
+	}
+
+	.ashop_order_list .result-orderpage div:last-child {
+		float: none !important;
+		width: 100%;
+	}
+
+}

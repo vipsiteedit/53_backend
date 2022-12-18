@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<params>
+	<parametr lang="ru" name="param1" title="Ширина раздела" list="y|Резиновая,n|Фиксированная">n</parametr>
+	<parametr lang="ru" name="param2" title="Количество заказов на странице" list="">10</parametr>
+</params>

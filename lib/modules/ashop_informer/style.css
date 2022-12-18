@@ -1,0 +1,51 @@
+﻿.shop_informer.fixed {
+    position:fixed;
+    top:40%;
+    width:54px;
+}
+
+.shop_informer.fixed-left {
+    left:0;
+    right:auto;			  
+}
+
+.shop_informer.fixed-right {
+    left:auto;
+    right:0;			  
+}
+
+.shop_informer__content {
+    background:#3e3e3e;
+}
+
+.shop_informer__item {
+    padding:7px 10px;
+    text-align: center;    
+}
+
+.shop_informer__wish {
+    border-bottom: 1px solid #5f5f5f;
+}
+
+.shop_informer__compare {
+    border-bottom: 1px solid #5f5f5f;
+}
+
+.shop_informer__item_link {
+    color:#fff;
+    text-align:center;
+    padding:5px;
+    display:inline-block;
+}
+
+.shop_informer__item_link:hover, .shop_informer__item_link:focus {
+    text-decoration:none;
+}
+
+.shop_informer__item_icon {
+    display:block;
+}
+
+.shop_informer__item_count {
+    display:block;
+}

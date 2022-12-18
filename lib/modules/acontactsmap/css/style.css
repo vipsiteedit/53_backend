@@ -1,0 +1,47 @@
+﻿.contacts .maps {
+    margin-bottom:10px; clear:both;
+}
+.contacts .orgtitle {
+    margin-right:10px;
+}
+.contacts .name {
+    margin-bottom:10px;
+}
+.contacts .phone {
+    margin-bottom:10px;
+}
+.contacts .adr .region {
+    margin-left:5px;
+}
+.contacts .adr .street-address {
+    margin-left:5px;
+}
+.contacts .adr .url {
+    margin-top:10px; display:block;
+}
+
+.contacts .addr-block {
+	padding-bottom: 20px;
+	padding-top: 20px;
+}
+.contacts .name .orgtitle {
+	font-weight: bold;
+	margin-right: 10px;
+	display: inline-block;
+	text-align: right;
+}
+.contacts .phone .orgtitle {
+	font-weight: bold;
+	margin-right: 10px;
+	display: inline-block;
+	text-align: right;
+}
+.contacts .adr .orgtitle {
+	font-weight: bold;
+	margin-right: 10px;
+	display: inline-block;
+}
+.contacts .adr .url {
+	margin-top: 10px;
+	display: block;
+}

@@ -1,0 +1,18 @@
+Array
+(
+    [0] => Array
+        (
+            [id] => 125637
+            [region_id] => 2
+            [country_id] => 20
+            [city_name] => Уфа
+            [region] => 08
+            [region_name] => Республика Башкортостан
+            [area] => 
+            [country] => RU
+            [country_name] => Российская Федерация
+            [latitude] => 54.7852
+            [longitude] => 56.0456
+        )
+
+)

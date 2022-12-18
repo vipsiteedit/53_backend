@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<service>
+	<module name="mtext">1</module>
+	<module name="mnews">1</module>
+	<module name="mrss">1</module>
+	<module name="mfaq">1</module>
+	<module name="mfoto">1</module>
+	<module name="mfoto_slide">1</module>
+	<module name="mmail">1</module>
+	<module name="mapsite">1</module>
+	<module name="mguest">1</module>
+	<module name="manketa">1</module>
+	<module name="mtext_rating">1</module>
+	<module name="mfoto_rating">1</module>
+	<module name="mvoting">1</module>
+	<module name="menulink">1</module>
+	<module name="mbbs">1</module>
+	<module name="mregistration">1</module>
+	<module name="mrekv_chpass">1</module>
+	<module name="mrekv_personal">1</module>
+	<module name="madmin_user_list">1</module>
+	<module name="mrekv_company">1</module>
+	<module name="mshop_vitrine">1</module>
+	<module name="mshop_groups">1</module>
+	<module name="mshop_catalog">1</module>
+	<module name="mshop_carts">1</module>
+	<module name="mshop_cartinformer">1</module>
+	<module name="mshop_orderlist">1</module>
+	<module name="mshop_payment">1</module>
+	<module name="mshop_special">1</module>
+	<module name="mshop_valuteselector">1</module>
+	<packet>usermodule</packet>
+</service>

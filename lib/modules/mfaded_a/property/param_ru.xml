@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<params>
+	<parametr lang="ru" name="param2" title="Бесконечность ленты слайдера" list="true|Да,false|Нет">true</parametr>
+	<parametr lang="ru" name="param3" title="Кол-во отображаемых слайдов" list="">3</parametr>
+	<parametr lang="ru" name="param4" title="Кол-во листаемых слайдов" list="">1</parametr>
+	<parametr lang="ru" name="param5" title="Скорость листания(мс)" list="">300</parametr>
+	<parametr lang="ru" name="param12" title="Автоплей" list="true|Да,false|Нет">false</parametr>
+	<parametr lang="ru" name="param13" title="Скорость автоплея(мс)" list="">3000</parametr>
+	<parametr lang="ru" name="param9" title="Авто-ширина слайдов(только для img)" list="true|Да,false|Нет">false</parametr>
+	<parametr lang="ru" name="param6" title="Центровать слайды с авто-шириной(только для img)" list="true|Да,false|Нет">false</parametr>
+	<parametr lang="ru" name="param11" title="Оступы для центрального слайда(px)(только для img)" list="">0px</parametr>
+	<parametr lang="ru" name="param10" title="Адаптивная высота слайдов(только для img)" list="true|Да,false|Нет">true</parametr>
+	<parametr lang="ru" name="param7" title="Навигация(dots)" list="true|Да,false|Нет">true</parametr>
+	<parametr lang="ru" name="param8" title="Навигация(arrows)" list="true|Да,false|Нет">true</parametr>
+	<parametr lang="ru" name="param14" title="Режим исчезновения(Fade)(Только для: Кол-во отображаемых слайдов = 1)" list="true|Да,false|Нет">false</parametr>
+	<parametr lang="ru" name="param16" title="Вставить картинку в BG(background)" list="true|Да,false|Нет">true</parametr>
+	<parametr lang="ru" name="param15" title="Высота слайдера в %(Пропорциональна ширине)" list="">50</parametr>
+	<parametr lang="ru" name="param21" title="Высота слайдера в % при адаптации(Пропорциональна ширине)" list="">50</parametr>
+	<parametr lang="ru" name="param20" title="Включить адаптацию BG(background)" list="true|Да,false|Нет">true</parametr>
+	<parametr lang="ru" name="param17" title="Точка адаптации(breakpoint)(px)" list="">768</parametr>
+	<parametr lang="ru" name="param18" title="Кол-во слайдов при адаптации" list="">1</parametr>
+	<parametr lang="ru" name="param19" title="Пагинация при адаптации(dots)" list="true|Да,false|Нет">false</parametr>
+	<parametr lang="ru" name="param24" title="Стрелки при адаптации(arrows)" list="true|Да,false|Нет">false</parametr>
+	<parametr lang="ru" name="param22" title="Включить нумерацию пагинации" list="true|Да,false|Нет">false</parametr>
+	<parametr lang="ru" name="param23" title="Ширина раздела" list="y|Резиновая,n|Фиксированная">n</parametr>
+</params>

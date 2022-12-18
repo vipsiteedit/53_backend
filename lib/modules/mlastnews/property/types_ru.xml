@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<option>
+	<group>Новости</group>
+	<name>Информер новостей</name>
+	<comment>Отображает последние добавленные записи модуля &amp;quot;Новости&amp;quot;. Модуль работает начиная с версии Startplus</comment>
+</option>
