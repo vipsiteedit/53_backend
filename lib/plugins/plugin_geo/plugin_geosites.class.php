@@ -11,7 +11,7 @@ class plugin_geosites
     private $id_contact = 0;
     private $basedomain;
 
-    public function __construct($isMulti = false)
+    public function __construct($isMulti = false, $noGeo = false)
     {
         $plugin_geoip = new plugin_geoip();
         $sc = new seTable('shop_contacts', 'sc');
@@ -27,13 +27,19 @@ class plugin_geosites
 
         // Получение базового домена
         $this->basedomain = $this->getBaseDomain();
-
-
+        
         // Выбираем город когда базовый домен
-        if ($this->isDomain($this->basedomain) && !empty($_SERVER['HTTP_REFERER'])) {
+        if ($this->isDomain($this->basedomain) && !empty($_SERVER['HTTP_REFERER']) || $noGeo || true) {
+            // Получаем выбранный ID контакта
             $it = $this->getContactUrl(true);
             $this->storeSession($it);
-            return;
+            //$this->id_contact = intval($_SESSION['user_region']['id_contact']);
+            //if ($isMulti)
+                //$this->getContactDomain();
+            //   
+            //if (_HOST_ !== $this->basedomain)
+            //    $this->go301($this->basedomain . $_SERVER['REQUEST_URI']);
+            //return;
         } else {
             // Находим город локализации по IP
             $city = $plugin_geoip->getCity();
@@ -41,35 +47,50 @@ class plugin_geosites
             $this->id_contact = $this->getContactId($city['id']);
         }
 
-        $tmp_id = false;
+        $tmp_it = false;
         $this->city = '';
 
         // Получим базовый сайт
-        if (!$this->id_contact && !$this->city) {
+        if (!$this->id_contact) {
             foreach ($this->contactlist as $it) {
                 if (!$this->city && !$it['url']) {
                     // Получим город с неопределенным доменом
-                    $this->storeSession($it);
+                    $tmp_it = $it;
                 }
-                if ($this->id_city == $it['id_city']) {
-                    $this->storeSession($it);
+                if ($it['id_city'] && $this->id_city == $it['id_city']) {
+                    $tmp_it = $it;
                     break;
                 }
             }
+            if ($tmp_it) {
+                    $this->storeSession($tmp_it);
+            }
         } else {
-            foreach ($this->contactlist as $it) {
+            if($it = $this->getContact($this->id_contact)){
                 $this->storeSession($it);
-                break;
             }
         }
         $this->getContactDomain();
     }
+	
+	private function go301($url)
+	{
+		header("HTTP/1.1 301 Moved Permanently");
+        header("Location: " . $url);
+        exit;
+	}
 
     // Это текущий домен
     private function isDomain($domain)
     {
         $host = str_replace(array('http://', 'https://', '//'), '', $domain);
-        return ($host == $_SERVER['HTTP_HOST'] || 'www.' . $host == $_SERVER['HTTP_HOST']);
+        if (strpos($domain, '://')!==false){
+           list($http,) = explode(':', $domain);
+           $http .= '://';
+        } else {
+           $http = _HTTP_;
+        }
+        return (($http == _HTTP_) && ($host == $_SERVER['HTTP_HOST'] || 'www.' . $host == $_SERVER['HTTP_HOST']));
     }
 
     private function getContactDomain()
@@ -81,10 +102,11 @@ class plugin_geosites
                     // Если базовый домен есть в списке
                     $this->storeSession($it);
                 } else {
+                    //echo $this->id_contact;
                     $it = $this->getContact($this->id_contact);
                     $url = $this->getUrl($it['url']);
                     if ($url != $this->basedomain) {
-                        seData::getInstance()->go301($url . $_SERVER['REQUEST_URI']);
+                        //$this->go301($url . $_SERVER['REQUEST_URI']);
                     }
                     $this->storeSession($it);
                 }
@@ -95,7 +117,7 @@ class plugin_geosites
                 $this->storeSession($it);
             } else {
                 // Домен не найден, редиректимся на базовый домен
-                seData::getInstance()->go301($this->basedomain . $_SERVER['REQUEST_URI']);
+                $this->go301($this->basedomain . $_SERVER['REQUEST_URI']);
             }
         }
     }
@@ -117,7 +139,7 @@ class plugin_geosites
 
     public function getContactId($id_city)
     {
-        if ($id_city) {
+        if (!$id_city) {
             foreach ($this->contactlist as $it) {
                 if ($id_city == $it['id_city']) {
                     return $it['id'];
@@ -163,8 +185,9 @@ class plugin_geosites
     public function getUrl($url)
     {
         if ($url) {
+            if (substr($url, strlen($url) -1, 1) == '/') $url = substr($url, 0, -1);
             $thisurl = (strpos($url, '.') === false) ? $url . '.' . str_replace(array('https://', 'http://', '//'), '',  $this->basedomain) : $url;
-            //$thisurl = (strpos($thisurl, ':') !== false) ? end(explode(':', $thisurl)) : $thisurl;
+            //$thisurl = (strpos($thisurl, '://') !== false) ? end(explode('://', $thisurl)) : $thisurl;
             if (strpos($thisurl, '://') === false)
                 $thisurl = 'http://' . $thisurl;
             return $thisurl;
@@ -225,10 +248,10 @@ class plugin_geosites
         return $this->contactlist;
     }
 
-    public static function getInstance($isMulti = false)
+    public static function getInstance($isMulti = false, $noGeo = false)
     {
         if (self::$instance === null) {
-            self::$instance = new self($isMulti);
+            self::$instance = new self($isMulti, $noGeo);
         }
         return self::$instance;
     }
