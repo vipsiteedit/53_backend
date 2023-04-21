@@ -38,10 +38,6 @@ if (isRequest('err_rep')) {
     error_reporting(E_ALL);
 }
 
-if (file_exists('system/block')) {
-    header('Location: http://e-stile.ru/closed.html');
-    exit();
-}
 if (isRequest('ed')) {
     $system_page = getRequest('ed');
     $system_object = getRequest('object');
@@ -61,7 +57,7 @@ $fl_messerr = false;
 check_session(false);
 
 if (!file_exists('projects/' . SE_DIR . 'project.xml')) {
-    header('Location: http://e-stile.ru/newsite.html', 302);
+    echo "Проект еще не выгружен";
     exit();
 }
 
