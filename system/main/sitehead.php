@@ -29,7 +29,6 @@ if ($se->prj->adaptive == 1) {
 
 echo '<meta name="keywords" content="' . str_replace('"', '&quot;', strip_tags($keywords)) . '"> 
 <meta name="description" content="' . str_replace('"', '&quot;', $description) . '">
-<meta name="generator" content="CMS EDGESTILE SiteEdit">
 ';
 
 if (!empty($se->meta_tags)) {
