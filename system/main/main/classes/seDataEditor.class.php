@@ -1,21 +1,13 @@
 <?php
-//error_reporting(E_ALL);
 require_once (dirname(__FILE__).'/seMenuExecute.class.php');
 require_once (dirname(__FILE__).'/seModule39.class.php');
 require_once dirname(__FILE__)."/seImages.class.php";
 require_once "lib/lib_images.php";
 require_once SE_ROOT.'admin/helpers/modal.php';
-//require_once SE_ROOT."admin/views/seLanguage.php";
-//require_once dirname(__FILE__)."/../function.php";
-
-		
-//require_once (dirname(__FILE__).'/../function.php');
-//error_reporting(E_ALL);
 
 
 class seDataEditor {
 private static $instance = null;
-//public $menu = null;
 private $data = null;
 public $page = null;
 public $pages = null;
@@ -62,8 +54,8 @@ private $unique;
 	$this->title_icon_addrecord = $this->getTextLanguage('add', 'rec');
 	$this->title_icon_edrecord = $this->getTextLanguage('edit', 'rec');
 	$this->title_icon_addsection = $this->getTextLanguage('add', 'sec');
-	//$this->pagename = $this->data->getPageName();
   }
+
   public function getLang() {
       return $this->lang;
   }
@@ -76,7 +68,8 @@ private $unique;
 
 
   
-  private function setNodeMenu($node, $sort){
+  private function setNodeMenu($node, $sort)
+  {
 	//$sort[$name] = array_unique($sort[$name]);
 	foreach($sort as $item) {
 		foreach($this->data->pages as $page){
@@ -501,36 +494,7 @@ private $unique;
 		if (isset($_POST['partimage_alt'])){
 			$section->image_alt = stripslashes(getRequest('partimage_alt', 5));
 		}  
-		/*if (isset($_FILES['addrecimages']['tmp_name'])){
-			if (intval($section->rpwidth_img) == 0 || intval($section->rwidth_img) == 0) {
-				$section->rpwidth_img = 150;
-				$section->rwidth_img = 800;
-			}
-			require_once dirname(__FILE__)."/seImages.class.php";
-			$im = new seImages(getcwd().'/'.SE_DIR.'images', 'addrecimages');
-			foreach($_FILES['addrecimages']['tmp_name'] as $id=>$value){
-				if (is_uploaded_file($_FILES['addrecimages']['tmp_name'][$id])){
-					$record = $this->addRecord($section);
-					$record->title = stripslashes($_POST['recimage_alt'][$id]);
-					$record->image_alt = stripslashes($_POST['recimage_alt'][$id]);
-					$image = $im->set_image_prev($this->pagename . '_rec' . $section->id . '_' .
-						$record->id.'_'.time(), $section->rpwidth_img, $section->rwidth_img, $id);
-					if ($im->error=='' && !empty($image)){
-						$record->image = 'images/'.$image;
-					} else $record->image = '';
-				}
-			}
-			unset($im);
-		}*/
-		/*if (is_uploaded_file($_FILES['partimages']['tmp_name'][0])){
-			if (strval($section->image)!='') unlink(getcwd().'/'.SE_DIR.$section->image);
-			require_once dirname(__FILE__)."/seImages.class.php";
-			$im = new seImages(getcwd().'/'.SE_DIR.'images', 'partimages');
-			$image = $im->set_image($this->pagename.'_part'.$section->id.'_'.time(), 300);
-			if ($im->error=='' && !empty($image)){
-				$section->image = 'images/'.$image;
-			} else $section->image = '';
-		} else {*/
+
 			$partimage = '';
 			if (isset($_POST['partimage']) && !empty($_POST['partimage'])){
 				$partimage = stripslashes(getRequest('partimage', 5));
@@ -543,12 +507,10 @@ private $unique;
 					if (substr($partimage, 0, 1) == '/') $partimage = substr($partimage, 1);
 				}
 			}
-			$section->image = $partimage;
-		//}
+
 		if (isset($_POST['recorder'])) {	
 			if (is_array($_POST['recorder'])){
 				$recordgroup = getRequest('recorder',1);
-				//$recordgroup = explode(',', trim($_POST['recordgroup']));
 			} else {
 				$recordgroup = array();
 			}
@@ -588,18 +550,7 @@ private $unique;
 					$section->rwidth_img = 500;
 				}
 			}
-			/*if (is_uploaded_file($_FILES['recimages']['tmp_name'][0])){
-				if (strval($record->image)!=''){
-					unlink(getcwd().'/'.SE_DIR . $record->image);
-				}
-				$im = new seImages(getcwd().'/'.SE_DIR . 'images', 'recimages');
-				$image = $im->set_image_prev($this->pagename . '_rec' . $section->id . '_' . $record->id.'_'.time(), 100, 300);
-				if ($im->error=='' && !empty($image)){
-					$record->image = 'images/'.$image;
-				} else {
-					$record->image = '';
-				}
-			} else*/
+
 			if (isset($_POST['recordimage'])) {
 				$recimage = trim(stripslashes(getRequest('recordimage', 5)));
 				if (!empty($recimage) && (strval($record->image)!=$recimage || $resize_width) && file_exists(SE_ROOT.SE_DIR.$recimage)) {
@@ -708,7 +659,6 @@ private $unique;
   private function deleteSection() {
   
 	if (isset($_GET['jqueryform']) && $_GET['jqueryform']=='partremove') {
-		//var_dump($_POST['value']);
 		$hashcode = @$_POST['hashcode'];
 		$check = @$_SESSION['confirmation'];
 		if ($hashcode!=$check) {
@@ -1109,13 +1059,12 @@ private $unique;
 			file_put_contents(SE_ROOT.'projects/' . SE_DIR . 'edit/mainmenu.xml', preg_replace("/[\s]{1,}[\r\n]/","", $this->mainmenu->saveXML()));
 			$menu = new seMenuExecute();
 			echo $menu->getPageMenu().'>>!!<<'.$menu->getMainMenu();
-			//print_r($this->pagemenu);
 			exit;
 		}
   }  
   
   private function setMenuItem($name, $mselect = true, $is_mainMenu = true){
-	//error_reporting(E_ALL);
+
 	$name_menu =($is_mainMenu) ? 'mainmenu' : 'pagemenu';
 		$nodes = $this->data->$name_menu;
 		if (!$mselect){
@@ -1251,18 +1200,6 @@ private $unique;
 		}
   }
 	
-	/*protected $btn_defaults = array(
-		'event'=>null,
-		'subject'=>null,
-		'id'=>null,
-		'img'=>null,
-		'alt'=>null,
-		'add'=>null,
-		'force_text'=>false,
-		'size'=>'xs',
-		'type'=>'default'
-	);*/
-	
 public function getBtn($event = null, $subject = null, $id = null, $img = null, $alt = null, $add = null, $force_text = false, $size = 'xs', $type = 'default') {
 	
 	$event = 	(is_null($event)) 	? '' : " data-event=\"$event\"";
@@ -1339,7 +1276,6 @@ public function getBtnGroup($buttons, $add) {
 	$rimg = '/admin/assets/icons/16x16/cross.png';
     $content_id = $section->id / 1000;
 	$buttons = array(
-		//$this->getBtn('frame_add','section',$content_id,$aimg,$this->title_icon_addsection),
 		$this->getBtn('frame_edit','section',$section->id,$img,$this->title_icon_edsection,null,false,'xs','warning'),
 		$this->getBtn('frame_remove','section',$section->id,$rimg,'remove',null,false,'xs','warning')
 	);
@@ -1348,16 +1284,13 @@ public function getBtnGroup($buttons, $add) {
 	if (trim($section->type) == '') $section->type = 'mtext';
 	if ($this->getModuleOption(trim($section->type))) {
 		$buttons[] = $this->getBtn('frame_add','record',$section->id,'/admin/assets/icons/add_object.png',$this->title_icon_addrecord,null,false,'xs','success');
-		//$buttons[] = $this->getBtn('frame_position','record',$section->id,'/admin/assets/icons/16x16/menu_item.png',$this->title_icon_addsection, null ,false,'xs','success');
 	}
 	
 	return $this->getBtnGroup($buttons, 'data-toolbar="left" style="display:none;"');
-	//return "<img class=\"cico-e\" src=\"{$img}\" alt=\"Изменить раздел\"> Изменить {$id_sect}";  
   }
   
   public function setEditorLinks($section, $text){
 	if (!$this->editorAccess() || $_SESSION['siteediteditor']) return $text;
-	//$text = "<div class=\"groupItem\" id=\"group_{$section->id}\">".$this->addClassSection($section, $text).'</div>';
 	$text = $this->addClassSection($section, $text);
     return $text;
   }
@@ -1365,14 +1298,10 @@ public function getBtnGroup($buttons, $add) {
   public function addClassSection($section, $text, $add = true)
   {
 	if (!$this->editorAccess()) return $text;	
-	//  ui-widget ui-widget-content ui-helper-clearfix ui-corner-all
 	if ($add){
 		$text = "<div data-content=\"$section->id\">". $this->getContentEditLink($section).$text.'</div>'; //<div class=\"bgcshadow\"></div>
 	}	
 	
-	//$text = str_replace('class="contentTitle"', "class=\"contentTitle\" id=\"edit_contentTitle_{$section->id}\"", $text);
-	//$text = str_replace('class="contentText"', "class=\"contentText\" id=\"edit_contentText_{$section->id}\"", $text);
-	/*return  preg_replace("/(<img.+?class=\"contentImage\".+?>)/uim", "<div class=\"contentImage\" id=\"edit_contentImage_{$section->id}\">$1</div>", $text);*/
 	return $text;
   }
   
@@ -1397,17 +1326,6 @@ public function getBtnGroup($buttons, $add) {
 		$btngr = $this->getBtnGroup($buttons, 'data-toolbar="left" style="display:none;"');
 	  return $btngr;
 	   
-	   /*return "<div class=\"itemRecordHeader editallbox\">
-	  <span class=\"se-edit-content-head\">
-	  <span class=\"se-edit-record\" data-event=\"frame_edit\" data-subject=\"record\" data-id=\"{$section_id}_{$record_id}\">
-	  	<img class=\"cico-e\" src=\"/admin/assets/icons/edit_object.png\" title=\"{$this->title_icon_edrecord}\" alt=\"{$this->title_icon_edrecord}\">
-	  </span> 
-	  
-	  </div>";*/ //<u>Изменить</u>
-
-	  //$text = "<div style=\"width:100%;\" class=\"itemRecordHeader\">";
-	  //return $text."<img class=\"se-edit-record\" id=\"item-record-{$record_id}\" src=\"/admin/assets/icons/edit_object.png\"></div>";
-	  /*return $text."<img id=\"edit_record_{$record_id}\" onClick=\"getEditWindow('editrecord','{$section_id}_{$record_id}');\" src=\"/admin/assets/icons/edit_object.png\">*/
 	  } else {
         return " id=\"item-record{$type}-{$record_id}\"";
 	  }
@@ -1525,4 +1443,3 @@ public function getBtnGroup($buttons, $add) {
     else return $word;
   }
 }
-?>

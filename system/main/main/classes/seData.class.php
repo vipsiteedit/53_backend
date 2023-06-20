@@ -477,8 +477,7 @@ class seData
             $this->error = true;
 
             if (!file_exists(SE_SAFE . 'projects/' . SE_DIR . 'pages/page404.xml')) {
-                //header('HTTP/1.0 404 File not found');
-                header("Location: https://e-stile.ru/404.php");
+                header('HTTP/1.0 404 File not found');
                 exit();
             } else {
                 $this->pagename = 'page404';
@@ -578,11 +577,8 @@ class seData
 
     public function go404()
     {
-        if (!file_exists(SE_SAFE . 'projects/' . SE_DIR . 'pages/page404.xml')) {
-            header("Location: https://e-stile.ru/404.php");
-            //print preg_replace("/[\"](images|skin)\//", '"http://e-stile.ru/$1/', $this->getHTTP("http://e-stile.ru/404.html"));
-        } else {
-            header('HTTP/1.0 404 File not found');
+        header('HTTP/1.0 404 File not found');
+        if (file_exists(SE_SAFE . 'projects/' . SE_DIR . 'pages/page404.xml')) {
             print $this->getHTTP(_HOST_ . seMultiDir() . '/page404/');
         }
         exit;
